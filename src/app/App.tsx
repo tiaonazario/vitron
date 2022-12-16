@@ -1,9 +1,9 @@
-import vitronLogo from "../assets/images/vitron.svg";
+import { Home } from "../pages/Home";
 
 function App() {
   return (
-    <div>
-      <img src={vitronLogo} className="logo" alt="React logo" />
+    <div className="w-screen h-screen flex flex-col">
+      <Home />
     </div>
   );
 }

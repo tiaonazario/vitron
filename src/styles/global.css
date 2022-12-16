@@ -2,8 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply bg-dark-bg2 text-dark-text;
+  -webkit-font-smoothing: antialiased;
+}
+
 /* images */
 * > img {
-    user-select: none;
-    pointer-events: none;
+  user-select: none;
+  pointer-events: none;
 }
