@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* images */
+* > img {
+    user-select: none;
+    pointer-events: none;
+}
