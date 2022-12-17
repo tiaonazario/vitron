@@ -12,3 +12,12 @@ body {
   user-select: none;
   pointer-events: none;
 }
+
+.drag {
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}

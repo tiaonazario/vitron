@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, nativeImage, shell } from "electron";
+import { app, BrowserWindow, ipcMain, shell } from "electron";
 import { release } from "os";
 import { join } from "path";
 
@@ -24,24 +24,16 @@ const url = process.env.VITE_DEV_SERVER_URL;
 const indexHtml = join(process.env.DIST, "index.html");
 
 const createWindow = async () => {
-  const icon = nativeImage.createFromPath(
-    join(app.getAppPath(), "./src/assets/images/vitron.svg")
-  );
-
-  if (app.dock) {
-    app.dock.setIcon(icon);
-  }
-
   win = new BrowserWindow({
     title: "Vitron",
     width: 1080,
     height: 680,
     minWidth: 940,
     minHeight: 560,
-    // frame: false,
-    icon,
+    icon: "src/assets/images/vitron.ico",
+    frame: false,
     webPreferences: {
-      //   preload,
+      preload,
       nodeIntegration: true,
       contextIsolation: true,
       devTools: true,
@@ -77,7 +69,6 @@ const createWindow = async () => {
     // eslint-disable-next-line no-unused-expressions
     win.isMaximized() ? win.restore() : win.maximize();
   });
-
   ipcMain.on("close", () => {
     win.close();
   });
